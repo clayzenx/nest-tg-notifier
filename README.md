@@ -1,5 +1,3 @@
-# Turborepo starter
+# TG notifier service
 
-Nothing in main branch. You can find different templates in specific branch here.
-Main branch only for update turborepo reason
-
+clone -> pnpm install -> pnpm dev -> localhost:4000/api

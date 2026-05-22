@@ -8,7 +8,14 @@
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
+    "generate:openapi": "turbo run generate:openapi",
+    "generate:sdk": "turbo run generate:openapi && turbo run generate:sdk",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md,yml}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^21.0.1",

@@ -8,17 +8,27 @@
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^lint"],
+      "outputs": []
     },
     "check-types": {
       "dependsOn": ["^check-types"]
     },
     "dev": {
+      "env": ["PORT", "DATABASE_URL"],
       "cache": false,
       "persistent": true
     },
     "test": {
       "dependsOn": ["^test"]
+    },
+    "generate:openapi": {
+      "cache": false
+    },
+    "generate:sdk": {
+      "dependsOn": ["generate:openapi"],
+      "cache": false,
+      "outputs": ["packages/api/client.ts"]
     }
   }
 }
